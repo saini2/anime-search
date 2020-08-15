@@ -39,7 +39,6 @@ export function augmentorMiddleware() {
           // error => next({ ...rest, error, type: FAILURE })
         })
         .catch(error => {
-          console.error("MIDDLEWARE ERROR:", error);
           if (
             error &&
             error.response &&
@@ -48,7 +47,6 @@ export function augmentorMiddleware() {
             (error.response.status === 401 || error.response.status === 403)
           ) {
             deleteCookie("UISESSIONID");
-            console.log(error.response);
             if (
               error.response.url &&
               error.response.url.includes("")

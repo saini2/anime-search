@@ -6,9 +6,12 @@
     }
 }
 .topSearchBar{
-    margin-top: 40px;
-    margin-left: 20px;
-    margin-right: 20px;
+    position: fixed;
+    width: 78%;
+    display: flex;
+    padding: 10px;
+    border-radius: 2px;
+
 }
 .loadMore{
     text-align: center;
@@ -20,7 +23,7 @@
     margin: 10px 0;
     line-height: 1.5;
     margin-left: 20px;
-    margin-top: 20px;
+    margin-top: 13%;
     font-weight: 900;
     .request{
         margin-bottom: 20px;
@@ -44,7 +47,7 @@
 }
 .initial{
     text-align: center;
-    font-size: 16px;
+    font-size: 30px;
     color: white;
     margin-top: 20%;
 }
@@ -79,3 +82,12 @@
         font-weight: bold;
     }
 }}
+.shadow{
+    background-color:#2e51a2;
+    height: 60px;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    box-shadow: 1px 1px 5px 2px #0000003b;
+}

@@ -14,9 +14,19 @@ export default class Anime extends React.Component {
         endTime: null,
         pageCount: 1,
         totalPage: '',
-        elementHeight: 0
+        elementHeight: 0,
+        shadowClass:''
     }
     componentDidMount() {
+        document.getElementsByTagName("body")[0].onscroll = () => {
+            if (window.scrollY > 10) {
+              if (!this.state.shadowClass) {
+                this.setState({ shadowClass: style.shadow });
+              }
+            } else {
+              this.setState({ shadowClass: false });
+            }
+          };
     }
 
     componentDidUpdate(preProps, preState) {
@@ -29,12 +39,12 @@ export default class Anime extends React.Component {
             }
         }
 
-        if(preState.elementHeight !== this.state.elementHeight){
+        if (preState.elementHeight !== this.state.elementHeight) {
             window.scrollTo({
                 top: preState.elementHeight,
                 left: 0,
                 behavior: 'smooth'
-              });
+            });
         }
     }
 
@@ -82,7 +92,7 @@ export default class Anime extends React.Component {
                         {<div className={style.parentHead} id='listView'>
                             {data.map((item, index) => {
                                 return (
-                                    <a className={style.parent} key={`_parent${index}`} href={`${item.url}`} id = {`_parent${index}`}>
+                                    <a className={style.parent} key={`_parent${index}`} href={`${item.url}`} id={`_parent${index}`}>
                                         <ImageCard
                                             imgurl={item.image_url}
                                             title={item.title}
@@ -91,7 +101,7 @@ export default class Anime extends React.Component {
                                 );
                             })}
                         </div>}
-                        {this.state.loadMore && (<div className={style.loadMore} id ='loadMore'>
+                        {this.state.loadMore && (<div className={style.loadMore} id='loadMore'>
                             <Button
                                 btnText="Load More..."
                                 onClickHandler={() => this.loadMoreListData()}
@@ -112,12 +122,21 @@ export default class Anime extends React.Component {
     render() {
         const { searchQuery, flag, startTime, endTime } = this.state;
         let time = endTime - startTime > 0 ? endTime - startTime : '-';
+        const { listData } = this.props;
+        let text = 'API Request URL will appear here';
+        let link ='';
+        if (listData.loading) {
+            text = 'Fetch'
+        } else if (!listData.loading && listData.data) {
+            text = `https://api.jikan.moe/v3/search/anime?q=${this.state.searchQuery}&limit=16&page=${this.state.pageCount}`
+            link = text
+        }
         return (
             <main>
                 <section>
                     <div className={style.topHeader}>
                         <div className={style.second}>
-                            <div className={style.topSearchBar}>
+                            <div className={`${style.topSearchBar} ${this.state.shadowClass}`}>
                                 <SearchBar
                                     placeholder="search for an anime, e.g Naruto"
                                     id="project"
@@ -129,13 +148,13 @@ export default class Anime extends React.Component {
                                 ></SearchBar>
                             </div>
                             <div className={style.requestParent}>
-                                <div className={style.request}>Requesting: <a target="_blank" rel="noopener noreferrer" id="search_query_url" href="https://api.jikan.moe/v3/search/anime?q=nhhh">https://api.jikan.moe/v3/search/anime?q=nhhh</a></div>
-                                <div className={style.flag}>Request Cached: <span>{`${flag}`}</span></div>
-                                <div className={style.time}>Time Taken <span>{time}ms</span></div>
+                                <div className={style.request}>Requesting:- <a target="_blank" rel="noopener noreferrer" id="search_query_url" href={link}>{text}</a></div>
+                                <div className={style.flag}>Request Cached:- <span>{`${flag}`}</span></div>
+                                <div className={style.time}>Time Taken:-  {time>0 && <span>{time}ms</span>}</div>
                             </div>
                             {searchQuery.length === 0 && (
                                 <div className={style.initial}>
-                                    Input Text and Press Enter to Search ...
+                                    Input Text and Press Enter to Search...
                                 </div>
                             )}
                             {searchQuery.length > 0 && this.renderSearchDataList()}

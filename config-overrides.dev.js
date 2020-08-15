@@ -11,7 +11,6 @@ module.exports = function(config) {
   config.module.rules.push(webfontLoaderConfig);
   config.output.filename = 'webdiy/static/js/bundle.js';
   config.output.chunkFilename = 'webdiy/static/js/[name].chunk.js';
-  console.log('sasfasf', process.argv[2]);
   config.plugins.push(
     new webpack.DefinePlugin({
       BASE_PATH: JSON.stringify('/'),

@@ -23,7 +23,6 @@ export const httpFetch = (url, opts = {}, handle500) => {
     } else {
       fetch(requestObj.url, requestObj.params)
         .then(response => {
-          console.log('ress',response);
           return response;
         })
         .then(checkResponse)
@@ -33,7 +32,6 @@ export const httpFetch = (url, opts = {}, handle500) => {
         })
         .catch(e => {
           clearTimeout(timeout);
-          console.log("Not able to fetch response for ", url, e);
           if (e.toString() === "TypeError: Failed to fetch") {
             request = {
               msg: constants.REQUEST_TIME_OUT,

@@ -6,8 +6,7 @@ import "url-search-params-polyfill";
 
 export default class RouteHandling extends React.PureComponent {
   getSubPartOfDeeplink = () => {
-    //It will return subpart of deeplink which will be needed for further proceeding
-    console.log("--2");
+    //It will return subpart of deeplink which will be needed for further proceedings
     const params = new URLSearchParams(window.location.search);
     const deeplinkUrl = params.get("page");
 

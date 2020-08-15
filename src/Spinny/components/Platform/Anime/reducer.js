@@ -39,8 +39,7 @@ export default function (state = initialState, action) {
         }
       }
     case GET_LIST_DATA_SUCCESS:
-      debugger
-      if (state.listData.loadingMore && state.listData.data) {
+      if (state.listData.loadingMore && !state.listData.loading) {
         let data = state.listData.data.results;
         let nextData = action.result.results;
         let totalData = [...data, ...nextData];
