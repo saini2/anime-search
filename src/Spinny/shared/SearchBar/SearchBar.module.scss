@@ -1,0 +1,34 @@
+.searchParent{
+    display: grid;
+    grid-template-columns: auto 50px;
+        input{
+            background: rgba(255,255,255,0.05);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-left: 1px solid rgba(255,255,255,0.4);
+    border-top: 1px solid rgba(255,255,255,0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    border-right: transparent;
+    width: 100%;
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 16px;
+        }
+    .goIcon{
+        background: rgba(255,255,255,0.05);
+        border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-right: 1px solid rgba(255,255,255,0.4);
+    border-top: 1px solid rgba(255,255,255,0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    border-left: transparent;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: rgba(255,255,255,0.8);
+    cursor: pointer; 
+    font-size: 16px;
+    }
+}

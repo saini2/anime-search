@@ -1,0 +1,15 @@
+button.css-1r4vtzz,
+button.css-48ayfv
+{
+    border: 1px solid #dbdbdb;
+    min-width: 150px;
+    min-height: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding:2px;
+    padding-left: 12px;
+    border-radius: 20.5px;
+    box-shadow: none;
+    font-size: 12px;
+}

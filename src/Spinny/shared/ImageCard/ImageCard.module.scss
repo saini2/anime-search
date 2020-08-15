@@ -1,0 +1,39 @@
+.border{
+    // height: 230px;
+    height: 100%;
+    // height: auto;
+    width: 250px;
+    margin: 10px;
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    .image{
+        min-height: 400px;
+        width: 100%;
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .title{
+     //   height: auto;
+        text-align: center;
+    height: inherit;
+        width: 100%;
+        padding: 4px 20px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-size: 14px;
+        color: #343434;
+        font-weight: bold;
+    }
+}

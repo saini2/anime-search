@@ -1,0 +1,81 @@
+.topHeader{
+    display: flex;
+    justify-content: center;
+    .second{
+        width: 80%;
+    }
+}
+.topSearchBar{
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.loadMore{
+    text-align: center;
+    margin-top: 20px;
+}
+.requestParent{
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    margin: 10px 0;
+    line-height: 1.5;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-weight: 900;
+    .request{
+        margin-bottom: 20px;
+        a{
+            color: rgba(255,255,255,0.9);
+            flex:1;
+        }
+    }
+    .flag{
+        margin-bottom: 20px;
+        span{
+            color: rgba(255,255,255,0.9);
+        }
+    }
+    .time{
+        margin-bottom: 20px;
+        span{
+            color: rgba(255,255,255,0.9);
+        }
+    }
+}
+.initial{
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    margin-top: 20%;
+}
+.parentHead{
+    display: flex; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+.parent{
+    margin-bottom: 45px;
+     .image{
+        width: 100%;
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .title{
+        height: auto;
+        width: 100%;
+        padding: 0 20px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-size: 14px;
+        color: #343434;
+        font-weight: bold;
+    }
+}}
