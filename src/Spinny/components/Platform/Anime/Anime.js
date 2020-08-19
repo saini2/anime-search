@@ -4,6 +4,7 @@ import SearchBar from '../../../shared/SearchBar/SearchBar'
 import Button from '../../../shared/Button/Button';
 import ImageCard from '../../../shared/ImageCard/ImageCard';
 
+
 export default class Anime extends React.Component {
     state = {
         searchQuery: '',
@@ -14,19 +15,20 @@ export default class Anime extends React.Component {
         endTime: null,
         pageCount: 1,
         totalPage: '',
-        elementHeight: 0,
-        shadowClass:''
+        elementHeight: 2104,
+        shadowClass: ''
     }
+    
     componentDidMount() {
         document.getElementsByTagName("body")[0].onscroll = () => {
             if (window.scrollY > 10) {
-              if (!this.state.shadowClass) {
-                this.setState({ shadowClass: style.shadow });
-              }
+                if (!this.state.shadowClass) {
+                    this.setState({ shadowClass: style.shadow });
+                }
             } else {
-              this.setState({ shadowClass: false });
+                this.setState({ shadowClass: false });
             }
-          };
+        };
     }
 
     componentDidUpdate(preProps, preState) {
@@ -38,18 +40,10 @@ export default class Anime extends React.Component {
                 this.setState({ loadMore: true });
             }
         }
-
-        if (preState.elementHeight !== this.state.elementHeight) {
-            window.scrollTo({
-                top: preState.elementHeight,
-                left: 0,
-                behavior: 'smooth'
-            });
-        }
     }
 
     handlerInput = value => {
-        this.setState({ searchQuery: value });
+        this.setState({ searchQuery: value, pageCount: 1 });
     };
 
     goSearch = value => {
@@ -92,7 +86,7 @@ export default class Anime extends React.Component {
                         {<div className={style.parentHead} id='listView'>
                             {data.map((item, index) => {
                                 return (
-                                    <a className={style.parent} key={`_parent${index}`} href={`${item.url}`} id={`_parent${index}`}>
+                                    <a className={style.parent} key={`_parent${index}`} href={`${item.url}`} id={`${item.id}`}>
                                         <ImageCard
                                             imgurl={item.image_url}
                                             title={item.title}
@@ -111,7 +105,7 @@ export default class Anime extends React.Component {
                 );
             } else {
                 return (
-                    <div>
+                    <div className={style.nothing}>
                         <div>We're Sorry!</div>
                         <div>{`We can't seem to find any anime that match your search for "${this.state.searchQuery}"`}</div>
                     </div>
@@ -124,7 +118,7 @@ export default class Anime extends React.Component {
         let time = endTime - startTime > 0 ? endTime - startTime : '-';
         const { listData } = this.props;
         let text = 'API Request URL will appear here';
-        let link ='';
+        let link = '';
         if (listData.loading) {
             text = 'Fetch'
         } else if (!listData.loading && listData.data) {
@@ -150,7 +144,7 @@ export default class Anime extends React.Component {
                             <div className={style.requestParent}>
                                 <div className={style.request}>Requesting:- <a target="_blank" rel="noopener noreferrer" id="search_query_url" href={link}>{text}</a></div>
                                 <div className={style.flag}>Request Cached:- <span>{`${flag}`}</span></div>
-                                <div className={style.time}>Time Taken:-  {time>0 && <span>{time}ms</span>}</div>
+                                <div className={style.time}>Time Taken:-  {time > 0 && <span>{time}ms</span>}</div>
                             </div>
                             {searchQuery.length === 0 && (
                                 <div className={style.initial}>
