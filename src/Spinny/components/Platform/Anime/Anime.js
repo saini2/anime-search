@@ -41,20 +41,20 @@ export default class Anime extends React.Component {
             }
         }
     }
-
+  
     handlerInput = value => {
         this.setState({ searchQuery: value, pageCount: 1 });
     };
 
     goSearch = value => {
         const { getListData } = this.props;
-        const { searchQuery, pageCount } = this.state;
+        const { searchQuery } = this.state;
         let data = {
             query: searchQuery,
-            pageNo: pageCount
+            pageNo: 1
         };
         if (value) {
-            this.setState({ startTime: new Date().getTime() });
+            this.setState({ startTime: new Date().getTime() ,pageCount:1});
             getListData(data);
         }
     };

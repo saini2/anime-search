@@ -8,12 +8,12 @@ self.__precacheManifest = [
     "url": "/static/js/main.9fe98f04.chunk.js"
   },
   {
-    "revision": "96584aaefb9864140abf",
-    "url": "/static/css/Spinny_platform_details.beb13f14.chunk.css"
+    "revision": "aedf6e929035fcb3c1a2",
+    "url": "/static/css/Spinny_platform_details.305e89bb.chunk.css"
   },
   {
-    "revision": "96584aaefb9864140abf",
-    "url": "/static/js/Spinny_platform_details.96584aae.chunk.js"
+    "revision": "aedf6e929035fcb3c1a2",
+    "url": "/static/js/Spinny_platform_details.aedf6e92.chunk.js"
   },
   {
     "revision": "583feb15c0373ddcc392",
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/static/js/2.583feb15.chunk.js"
   },
   {
-    "revision": "23e3d9444dcb7f43ccf8",
-    "url": "/static/js/runtime~main.23e3d944.js"
+    "revision": "59e2e041a536b660e570",
+    "url": "/static/js/runtime~main.59e2e041.js"
   },
   {
     "revision": "12d6724a254d3be629fc6b2871ae5a6a",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/static/media/FontFont_FF.Mark.Pro.Hairline.bb0ef748.otf"
   },
   {
-    "revision": "3de089cd304c3240808b4e5c63941d26",
+    "revision": "1d2f0ca511401939f17cba4ba6c7f289",
     "url": "/index.html"
   }
 ];
